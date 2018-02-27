@@ -10,9 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class MovieDocument {
 	@Id
 	private String id;
-	@Indexed
 	private String title;
-	@Indexed
 	private String description;
 	private String director;
 	private String genre;

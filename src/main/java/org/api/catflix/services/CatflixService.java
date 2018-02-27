@@ -24,4 +24,12 @@ public class CatflixService {
 		List<Movie> movies = modelMapper.map(md, targetMovies);
 		return movies;
 	}
+	
+	public boolean saveMovie(Movie movie) {
+		ModelMapper modelMapper = new ModelMapper();
+		MovieDocument movieDocument = new MovieDocument();
+		modelMapper.map(movie, movieDocument);
+		movieRepo.save(movieDocument);
+		return true;
+	}
 }

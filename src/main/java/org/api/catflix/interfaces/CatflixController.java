@@ -26,4 +26,9 @@ public class CatflixController {
 	public List<Movie> getAllMovies(@RequestBody MovieFilter movieFilter) {
 		return catflixService.getAll(movieFilter);
 	}
+	
+	@RequestMapping(value="/saveMovie", method=RequestMethod.POST)
+	public boolean saveMovie(@RequestBody Movie movie) {
+		return catflixService.saveMovie(movie);
+	}
 }
