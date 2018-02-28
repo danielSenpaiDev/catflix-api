@@ -20,7 +20,7 @@ public class CatflixService {
 	public List<Movie> getAll(MovieFilter filter){
 		Type targetMovies = new TypeToken<List<Movie>>() {}.getType();
 		ModelMapper modelMapper = new ModelMapper();
-		List<MovieDocument> md = movieRepo.getAll(filter);
+		List<MovieDocument> md = movieRepo.findAllMovies(filter);
 		List<Movie> movies = modelMapper.map(md, targetMovies);
 		return movies;
 	}

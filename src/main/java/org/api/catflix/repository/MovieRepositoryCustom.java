@@ -6,5 +6,5 @@ import org.api.catflix.data.MovieDocument;
 import org.api.catflix.domain.MovieFilter;
 
 public interface MovieRepositoryCustom {
-	List<MovieDocument> getAll(MovieFilter query);
+	List<MovieDocument> findAllMovies(MovieFilter query);
 }

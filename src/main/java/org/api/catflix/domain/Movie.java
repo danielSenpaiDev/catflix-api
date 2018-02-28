@@ -1,7 +1,5 @@
 package org.api.catflix.domain;
 
-import java.util.Date;
-
 public class Movie {
 	private String id;
 	private String title;

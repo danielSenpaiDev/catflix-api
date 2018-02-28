@@ -17,7 +17,7 @@ public class MovieRepositoryImpl implements MovieRepositoryCustom {
 	MongoTemplate mongoTemplate;
 
 	@Override
-	public List<MovieDocument> getAll(MovieFilter query) {
+	public List<MovieDocument> findAllMovies(MovieFilter query) {
 		Pageable pgReq = new PageRequest(query.getPage(), query.getPageCount());
 		
 		Query q = new Query();
@@ -37,7 +37,7 @@ public class MovieRepositoryImpl implements MovieRepositoryCustom {
 		
 		q.addCriteria(c);
 		q.with(pgReq);
-		List<MovieDocument> movies = mongoTemplate.find(q, MovieDocument.class);
+		List<MovieDocument> movies = mongoTemplate.findAll(MovieDocument.class);
 		return movies;
 	}
 
