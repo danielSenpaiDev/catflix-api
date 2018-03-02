@@ -1,5 +1,6 @@
 package org.api.catflix.data;
 
+import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,6 +19,8 @@ public class MovieDocument {
 	private String movieUrl;
 	private String thumbnailUrl;
 	private String backgroundUrl;
+	private boolean hasEpisodes;
+	private EpisodeDocument[] episodes;
 	
 	public String getTitle() {
 		return title;
@@ -91,4 +94,17 @@ public class MovieDocument {
 	public void setDuration(int duration) {
 		this.duration = duration;
 	}
+	public boolean isHasEpisodes() {
+		return hasEpisodes;
+	}
+	public void setHasEpisodes(boolean hasEpisodes) {
+		this.hasEpisodes = hasEpisodes;
+	}
+	public EpisodeDocument[] getEpisodes() {
+		return episodes;
+	}
+	public void setEpisodes(EpisodeDocument[] episodes) {
+		this.episodes = episodes;
+	}
+	
 }
